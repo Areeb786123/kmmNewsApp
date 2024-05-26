@@ -59,8 +59,11 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.ktor.client.android)
-            implementation(libs.koin.android)
+
+           // implementation("io.insert-koin:koin-androidx-compose:3.4.2")
+           implementation(libs.koin.android)
+            implementation("io.insert-koin:koin-androidx-compose:3.6.0-alpha3")
+//            implementation("io.insert-koin:koin-androidx-compose:3.6.0-alpha3")
 
         }
         commonMain.dependencies {
@@ -76,6 +79,8 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
 
+
+
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha03")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0-beta02")
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
@@ -86,6 +91,13 @@ kotlin {
             implementation(libs.ktor.logging)
             implementation(libs.ktor.negotiation)
             implementation(libs.kotlinx.serialization.json)
+
+            //vyouger
+
+            // Navigator
+            implementation("cafe.adriel.voyager:voyager-navigator:1.0.0")
+            implementation("cafe.adriel.voyager:voyager-koin:1.0.0")
+
 
 
         }

@@ -28,13 +28,14 @@ kermit = "2.0.3" # Logging
 
 # DI - Koin
 koin = "3.6.0-alpha3"
-koin-compose = "1.2.0-alpha3"
+koinComposeMultiplatform = "1.2.0-alpha3"
 
 # Ktor
 ktor = "2.3.2"
 ktorClientAndroid = "2.3.5"
 
 androidx-startup = "1.1.1"
+koinCompose = "3.6.0-alpha3"
 
 
 [libraries]
@@ -61,7 +62,8 @@ kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose"}
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatform"}
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinCompose" }
 
 ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
@@ -75,6 +77,7 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+
 
 androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup" }
 

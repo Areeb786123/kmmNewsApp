@@ -1,6 +1,8 @@
 package di
 
 import androidx.lifecycle.viewmodel.compose.viewModel
+import data.repo.HomeRepo
+import data.repoImp.HomeScreenRepositoryImplementation
 import data.repoImp.Test
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpCallValidator
@@ -14,10 +16,8 @@ import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import ui.mainScreen.viewmodels.HomeViewModels
 
-fun commonModules() = module {
-    single<Test> {
-        Test()
-    }
+val  commonModules = module {
+single<HomeRepo>{HomeScreenRepositoryImplementation(get ())}
     single {
         HttpClient {
             install(Logging) {
