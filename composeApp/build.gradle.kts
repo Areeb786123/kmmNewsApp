@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 kotlin {
@@ -29,7 +30,10 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
+
                 jvmTarget = "11"
+//                sourceCompatibility JavaVersion.VERSION_1_8
+//                        targetCompatibility JavaVersion.VERSION_1_8
             }
         }
     }
@@ -55,14 +59,14 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-
+            implementation(libs.ktor.client.android)
             implementation(libs.koin.android)
 
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.matlerial)
+//            implementation(compose.matlerial)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -70,21 +74,28 @@ kotlin {
             implementation(compose.materialIconsExtended)
 
             implementation(libs.koin.core)
-            implementation(libs.koin.core)
             implementation(libs.koin.compose)
 
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha03")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0-beta02")
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
 
+            //ktor
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.json)
+            implementation(libs.ktor.logging)
+            implementation(libs.ktor.negotiation)
+            implementation(libs.kotlinx.serialization.json)
+
 
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.ktor.client.okhttp)
 
         }
         iosMain.dependencies {
-
+            implementation(libs.ktor.client.darwin)
         }
     }
     task("testClasses")
