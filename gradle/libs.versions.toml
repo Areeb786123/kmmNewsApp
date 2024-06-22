@@ -31,11 +31,13 @@ koin = "3.6.0-alpha3"
 koinComposeMultiplatform = "1.2.0-alpha3"
 
 # Ktor
-ktor = "2.3.2"
-ktorClientAndroid = "2.3.5"
+ktor = "2.3.11"
+ktorClientAndroid = "2.3.11"
+ktor-client = "2.3.6"
 
 androidx-startup = "1.1.1"
 koinCompose = "3.6.0-alpha3"
+firebaseCrashlyticsBuildtools = "3.0.0"
 
 
 [libraries]
@@ -72,6 +74,7 @@ ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor"}
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
+ktor-client-encoding = { module = "io.ktor:ktor-client-encoding", version.ref = "ktor-client" }
 
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
@@ -80,6 +83,7 @@ sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sql
 
 
 androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup" }
+firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 
 
 [plugins]

@@ -12,7 +12,5 @@ actual class KoinInitializer(private val context: Context) {
             androidLogger()
             modules(commonModules, viewModelModule)
         }
-
-
     }
 }

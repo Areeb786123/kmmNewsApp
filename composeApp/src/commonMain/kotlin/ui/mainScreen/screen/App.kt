@@ -35,33 +35,8 @@ fun App(navHostController: NavHostController) {
 @Composable
 fun pre() {
     KoinContext {
-        val viewModel  = koinInject<HomeViewModels>()
         MaterialTheme {
-            var showContent by remember { mutableStateOf(false) }
-            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                Button(onClick = {
-                    showContent = !showContent
-//                test.test()
-                    //navHostController.navigate("detailScreen")
-                }) {
-                    Text("Click me!")
-                    viewModel.callApi()
-
-                }
-                AnimatedVisibility(showContent) {
-                    val greeting = remember { Greeting().greet() }
-                    Column(
-                        Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Image(painterResource(Res.drawable.compose_multiplatform), null)
-                        Text("Compose: $greeting", modifier = Modifier.clickable {
-
-                        })
-
-                    }
-                }
-            }
+            GetNewsScreen()
         }
     }
 

@@ -60,8 +60,9 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
 
-           // implementation("io.insert-koin:koin-androidx-compose:3.4.2")
-           implementation(libs.koin.android)
+            // implementation("io.insert-koin:koin-androidx-compose:3.4.2")
+            implementation(libs.koin.android)
+            implementation(libs.ktor.client.okhttp)
             implementation("io.insert-koin:koin-androidx-compose:3.6.0-alpha3")
 //            implementation("io.insert-koin:koin-androidx-compose:3.6.0-alpha3")
 
@@ -91,13 +92,13 @@ kotlin {
             implementation(libs.ktor.logging)
             implementation(libs.ktor.negotiation)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.ktor.client.encoding)
 
             //vyouger
 
             // Navigator
             implementation("cafe.adriel.voyager:voyager-navigator:1.0.0")
             implementation("cafe.adriel.voyager:voyager-koin:1.0.0")
-
 
 
         }
