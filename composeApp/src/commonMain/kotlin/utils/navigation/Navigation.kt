@@ -31,7 +31,7 @@ fun Navigation() {
                 modifier = Modifier.fillMaxSize()
             ) {
                 composable(route = Screen.MainScreen.route) {
-                    App(navController)
+                    App(navHostController = navController)
                 }
                 composable(route = Screen.DetailScreen.route) {
                     DetailScreen()
