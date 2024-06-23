@@ -13,6 +13,7 @@ androidx-espresso-core = "3.5.1"
 androidx-material = "1.11.0"
 androidx-room = "2.7.0-alpha01"
 androidx-data-store = "1.1.1"
+kamelImageVersion = "0.9.5"
 ksp = "1.9.23-1.0.19"
 sqlite = "2.5.0-SNAPSHOT"
 androidx-test-junit = "1.1.5"
@@ -38,6 +39,7 @@ ktor-client = "2.3.6"
 androidx-startup = "1.1.1"
 koinCompose = "3.6.0-alpha3"
 firebaseCrashlyticsBuildtools = "3.0.0"
+coil = "3.0.0-alpha06"
 
 
 [libraries]
@@ -78,13 +80,19 @@ ktor-client-encoding = { module = "io.ktor:ktor-client-encoding", version.ref = 
 
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
+coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil" }
 
+media-kamel-image = { module = "media.kamel:kamel-image", version.ref = "kamelImageVersion" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 
 
 androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup" }
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 
+
+[bundles]
+coil-common = ["coil", "coil-ktor"]
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

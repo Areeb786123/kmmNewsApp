@@ -19,7 +19,7 @@ class HomeScreenRepositoryImplementation() : HomeRepo {
         val response: NewsResponse = client.get {
             url {
                 encodedPath = "top-headlines"
-             parameters.append("country", "us")
+             parameters.append("country", "in")
             }
         }.body()
 

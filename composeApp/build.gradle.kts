@@ -81,6 +81,7 @@ kotlin {
             implementation(libs.koin.compose)
 
 
+            implementation("media.kamel:kamel-image:0.9.5")
 
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha03")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0-beta02")
@@ -94,11 +95,9 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.ktor.client.encoding)
 
-            //vyouger
-
-            // Navigator
-            implementation("cafe.adriel.voyager:voyager-navigator:1.0.0")
-            implementation("cafe.adriel.voyager:voyager-koin:1.0.0")
+            //image processing coil
+            implementation(libs.bundles.coil.common)
+            implementation(libs.media.kamel.image)
 
 
         }
