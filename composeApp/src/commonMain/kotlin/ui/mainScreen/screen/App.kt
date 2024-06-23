@@ -35,6 +35,7 @@ import utils.DateAndTime.returnCurrentDate
 @Composable
 @Preview
 fun App(navHostController: NavHostController) {
+
     pre()
 }
 
@@ -44,6 +45,7 @@ fun pre() {
         MaterialTheme {
             Scaffold(modifier = Modifier.fillMaxWidth()) {
                 Column {
+                    Spacer(modifier = Modifier.padding(top = 38.dp))
                     Column(
                         modifier = Modifier.fillMaxWidth().height(150.dp).padding(start = 10.dp)
                     ) {
