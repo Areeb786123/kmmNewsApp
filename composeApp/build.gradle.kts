@@ -99,6 +99,8 @@ kotlin {
             implementation(libs.bundles.coil.common)
             implementation(libs.media.kamel.image)
 
+            implementation ("com.google.accompanist:accompanist-systemuicontroller:0.35.1-alpha")
+
 
         }
         desktopMain.dependencies {

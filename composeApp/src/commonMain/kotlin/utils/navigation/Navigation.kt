@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -24,19 +25,18 @@ fun Navigation() {
     val navController: NavHostController = rememberNavController()
     val backStackEntry = navController.currentBackStackEntryAsState()
     CompositionLocalProvider(LocalNavHost provides navController) {
-        Scaffold {
-            NavHost(
-                navController = navController,
-                startDestination = Screen.MainScreen.route,
-                modifier = Modifier.fillMaxSize()
-            ) {
-                composable(route = Screen.MainScreen.route) {
-                    App(navHostController = navController)
-                }
-                composable(route = Screen.DetailScreen.route) {
-                    DetailScreen()
-                }
+        NavHost(
+            navController = navController,
+            startDestination = Screen.MainScreen.route,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            composable(route = Screen.MainScreen.route) {
+                App(navHostController = navController)
             }
+            composable(route = Screen.DetailScreen.route) {
+                DetailScreen()
+            }
+
         }
     }
 }
