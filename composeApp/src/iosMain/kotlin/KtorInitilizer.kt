@@ -1,7 +1,5 @@
-import KtorClient.Companion.LOGGER_TAG
-import android.util.Log
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.okhttp.OkHttp
+import io.ktor.client.engine.darwin.Darwin
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
@@ -13,15 +11,10 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 
-interface KtorClient {
-    companion object {
-        const val LOGGER_TAG = "ktorLog"
-    }
-}
 
 @OptIn(ExperimentalSerializationApi::class)
 actual val client: HttpClient
-    get() = HttpClient(OkHttp) {
+    get() = HttpClient(Darwin) {
         install(HttpTimeout) {
             socketTimeoutMillis = 60_000
             requestTimeoutMillis = 60_000
@@ -31,7 +24,7 @@ actual val client: HttpClient
             level = LogLevel.ALL
             logger = object : io.ktor.client.plugins.logging.Logger {
                 override fun log(message: String) {
-                    Log.e(LOGGER_TAG, message)
+                    println("ktorLog, $message")
                 }
             }
         }
