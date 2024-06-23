@@ -76,8 +76,9 @@ fun NewsSingleComponent(item: Article) {
                 )
             }
             Spacer(modifier = Modifier.padding(top = 8.dp))
+
             Text(
-                text = item.author.toString(),
+                text = if (item.author?.isNotEmpty() == true) item.author.toString() else "Some insiders",
                 fontWeight = FontWeight.Black,
                 fontSize = 20.sp,
                 fontStyle = FontStyle.Italic,

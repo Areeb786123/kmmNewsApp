@@ -37,7 +37,7 @@ actual val client: HttpClient
         }
 
         defaultRequest {
-            header("X-Api-Key", "8e9bf0d5d77b4bfbb83b5aed220510e5")
+            header("X-Api-Key", "your api key")
             url("https://newsapi.org/v2/")
         }
         install(ContentNegotiation) {
